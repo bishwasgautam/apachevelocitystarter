@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app  id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
     <!--    register servlet    -->
+    <!-- class to name -->
     <servlet>
         <servlet-name>ServletVelocity</servlet-name>
         <servlet-class>com.staples.quill.apachevelocity.servlet.VelocityServlet</servlet-class>
     </servlet>
+    
+    <!-- name to url -->
     <servlet-mapping>
+    
         <servlet-name>ServletVelocity</servlet-name>
         <url-pattern>/velocity.service</url-pattern>
     </servlet-mapping>
