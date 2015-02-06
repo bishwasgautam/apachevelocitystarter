@@ -7,7 +7,6 @@ import java.util.List;
 import com.staples.quill.apachevelocity.bean.Order;
 import com.staples.quill.apachevelocity.common.CommonUtility;
 import com.staples.quill.apachevelocity.data.DataRepository;
-
 import org.json.simple.JSONObject;
 
 public class OrderService {
@@ -33,7 +32,7 @@ public class OrderService {
 		
 		List<Order> orderList = new ArrayList<Order>();
 		
-		for(Iterator<String> i = jsonList.iterator(); i.hasNext(); ) {
+		for(Iterator<JSONObject> i = jsonList.iterator(); i.hasNext(); ) {
 		    
 		    Object obj =_commonUtility.JsonToPOJO(i.next());
 		    
@@ -42,7 +41,7 @@ public class OrderService {
 		
 		
 		
-		return 
+		return orderList;
 				
 		
 	}

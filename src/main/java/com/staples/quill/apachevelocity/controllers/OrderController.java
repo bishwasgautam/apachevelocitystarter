@@ -17,7 +17,7 @@ public class OrderController extends VelocityController {
 	private List<Order> _pendingOrders; 
 	
 	public OrderController(){
-		
+		super();
 		_orderService = new OrderService();		
 	}
 	
