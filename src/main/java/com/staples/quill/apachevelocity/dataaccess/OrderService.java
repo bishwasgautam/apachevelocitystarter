@@ -9,16 +9,17 @@ import com.staples.quill.apachevelocity.common.CommonUtility;
 import com.staples.quill.apachevelocity.data.DataRepository;
 import org.json.simple.JSONObject;
 
+/*TODO*/
+/*Put logging stuff here */
+
 public class OrderService {
 
 	private DataRepository _repository;
-	private CommonUtility _commonUtility;
-	
+		
 	public OrderService(){
 	
 		_repository = new DataRepository();
-		_commonUtility = new CommonUtility();
-		
+			
 	}
 	
 	public List<Order> GetImpendingOrders(){
@@ -34,9 +35,18 @@ public class OrderService {
 		
 		for(Iterator<JSONObject> i = jsonList.iterator(); i.hasNext(); ) {
 		    
-		    Object obj =_commonUtility.JsonToPOJO(i.next());
+		    Object obj = CommonUtility.JsonToPOJO(i.next());
+		    Order order = null;
 		    
+		    try{
+		    	order = (Order) obj;	
+		    }catch(Exception ex){
+		    	
+		    	ex.printStackTrace();
+		    }
 		    
+		    if(order != null )
+		    orderList.add(order);
 		}
 		
 		
